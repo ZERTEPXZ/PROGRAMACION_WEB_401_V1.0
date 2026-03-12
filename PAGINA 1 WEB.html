@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario de Inscripción</title>
+
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#f2f2f2;
+}
+
+form{
+    background:white;
+    width:500px;
+    margin:auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px gray;
+}
+
+h2{
+    text-align:center;
+}
+
+label{
+    font-weight:bold;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:8px;
+    margin:6px 0 12px 0;
+}
+
+.botones{
+    display:flex;
+    justify-content:space-between;
+}
+
+</style>
+</head>
+
+<body>
+
+<form>
+
+<h2>Formulario de Inscripción</h2>
+
+<label>Tipo de Documento</label>
+<select required>
+<option value="">Seleccione</option>
+<option>Cédula de ciudadanía</option>
+<option>Tarjeta de identidad</option>
+<option>Cédula de extranjería</option>
+<option>Pasaporte</option>
+</select>
+
+<label>Número de Documento</label>
+<input type="text"
+pattern="[0-9]{5,15}"
+title="Solo números entre 5 y 15 dígitos"
+required>
+
+<label>Nombres</label>
+<input type="text"
+pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]{3,64}"
+minlength="3"
+maxlength="64"
+title="Entre 3 y 64 letras"
+required>
+
+<label>Apellidos</label>
+<input type="text"
+pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]{3,64}"
+minlength="3"
+maxlength="64"
+title="Entre 3 y 64 letras"
+required>
+
+<label>Dirección</label>
+<input type="text" required>
+
+<label>Teléfono Fijo</label>
+<input type="tel"
+pattern="[0-9]{7}"
+title="Debe tener 7 números"
+required>
+
+<label>Teléfono Celular</label>
+<input type="tel"
+pattern="[0-9]{10}"
+title="Debe tener 10 números"
+required>
+
+<label>Correo Electrónico</label>
+<input type="email"
+pattern="[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
+title="Debe contener @ y dominio válido"
+required>
+
+<label>Usuario</label>
+<input type="text"
+pattern="[A-Za-z]{3,14}[0-9]{0,2}"
+title="Entre 3 y 16 caracteres, letras y hasta 2 números al final"
+required>
+
+<label>Password</label>
+<input type="password"
+pattern="(?=.*[A-Z])(?=(?:.*[a-z]){2,})(?=(?:.*[0-9]){5,})[A-Za-z0-9!?\-+/&$]{16}"
+title="16 caracteres con 1 mayúscula, 2 minúsculas, 5 números y símbolos !?-+/&$"
+required>
+
+<label>Fecha de Inscripción</label>
+<input type="date"
+min="2026-02-15"
+max="2026-03-10"
+required>
+
+<label>Hobbies</label>
+
+<input type="checkbox"> Deporte<br>
+<input type="checkbox"> Música<br>
+<input type="checkbox"> Lectura<br>
+<input type="checkbox"> Videojuegos<br>
+<input type="checkbox"> Viajar<br><br>
+
+<div class="botones">
+<input type="submit" value="Enviar">
+<input type="reset" value="Limpiar">
+</div>
+
+</form>
+
+</body>
+</html>
